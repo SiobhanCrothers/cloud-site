@@ -22,12 +22,18 @@ const Search = ({
     }, [location.search]);
     return (
     <Layout location={location} title={data.site.siteMetadata.title}>
-    <SearchForm query={searchQuery} />
-    <SearchResults
-      query={searchQuery}
-      results={results}
-    />
-  </Layout>
+      <section className="section">
+        <div className="container">
+          <div className="content">
+            <SearchForm query={searchQuery} />
+            <SearchResults
+              query={searchQuery}
+              results={results}
+            />
+          </div>
+        </div>
+      </section>
+    </Layout>
     );
 };
 

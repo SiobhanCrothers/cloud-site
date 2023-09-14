@@ -2,7 +2,12 @@ import React from 'react';
 import "../style/with-lunr.css"; 
 
 const SearchResults = ({ results, query }) => ( 
-<div>
+
+  <section className="section section--gradient">
+    <div className="container">
+      <div className="columns">
+        <div className="column is-10 is-offset-1">
+          <div className="section">
 {!!results.length && query && 
   <h2
     className="search-results-count"
@@ -31,7 +36,13 @@ const SearchResults = ({ results, query }) => (
     ))}
   </ol>
 }
-</div>
+
+	  </div>
+	</div>
+      </div>
+    </div>
+  </section>
+
 );
 
 export default SearchResults;
