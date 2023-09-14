@@ -49,29 +49,53 @@ module.exports = {
     filename: 'search_index.json',
   },
 },
-    `gatsby-plugin-image`,
+    "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-sass",
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        sassOptions: {
+          indentedSyntax: true,
+        },
+      },
+    },
+    `gatsby-plugin-image`,
+     {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "uploads",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "pages",
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/img`,
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          {
+          'gatsby-remark-relative-images', 
+	  {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 2048,
+            },
+          },
+	  {
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              destinationDir: "static",
             },
           },
           {
@@ -136,6 +160,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-purgecss", // purges all unused/unreferenced css rules
+      options: {
+        develop: true, // Activates purging in npm run develop
+        purgeOnly: ['/bulma-style.sass'], // applies purging only on the bulma css file
+        printRejected: true,
+      },
+    }, // must be after other CSS plugins
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Gatsby Starter Blog`,
@@ -146,7 +178,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/img/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
   ],

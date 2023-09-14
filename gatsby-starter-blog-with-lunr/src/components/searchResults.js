@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles/with-lunr.css"; 
+import "../style/with-lunr.css"; 
 
 const SearchResults = ({ results, query }) => ( 
 <div>
