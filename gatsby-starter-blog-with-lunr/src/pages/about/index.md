@@ -1,19 +1,29 @@
 ---
 templateKey: 'about-page'
 path: /about
-title: About our values
+title: What is Bravura Cloud?
+date: 2023-09-01
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+# Summary
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+Bravura Cloud is a cloud native Identity and Access Management platform built
+# Services
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+Below is a list of the micro services that make up Bravura Cloud.
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+* PostgreSQL is a powerful, open-source object-relational database system that provides reliability, data integrity, and support for complex data types and operations. It is commonly used as the primary data store for a wide variety of applications.
+
+* Hasura is an open-source engine that connects to your databases and microservices and instantly provides a production-ready GraphQL API. It simplifies the process of building and deploying robust, scalable GraphQL backends.
+
+* Keycloak is an open-source Identity and Access Management (IAM) solution that provides features such as Single Sign-On (SSO), identity brokering, and social login, making it easier to secure modern applications and services.
+
+* Grafana is a popular open-source platform for monitoring and visualizing metrics from various data sources, allowing teams to create, explore, and share dashboards.
+
+* Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus. It is designed to be cost-effective and easy to operate, as it does not index the contents of the logs but rather a set of labels for each log stream.
+
+* Prometheus is an open-source monitoring and alerting toolkit designed for reliability and scalability. It collects and stores time-series data from various sources and provides a powerful query language to analyze that data.
+
+* NGINX is a popular open-source web server, reverse proxy, and load balancer. It is known for its high performance, stability, and rich feature set.
+
+* Open Policy Agent (OPA) is an open-source, general-purpose policy engine that unifies policy enforcement across the stack. It provides a high-level declarative language to specify policy as code and can be used with various types of software to implement fine-grained, context-aware access control.
