@@ -49,6 +49,7 @@ module.exports = {
     filename: 'search_index.json',
   },
 },
+    "gatsby-plugin-antd",
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sass",

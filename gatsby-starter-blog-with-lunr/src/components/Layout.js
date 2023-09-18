@@ -6,6 +6,7 @@ import "../style/bulma-style.sass";
 import "../style/custom-style.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
+import Sidebar from './Sidebar';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -50,7 +51,16 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+      <div className="columns">
+	<div className="column is-3">
+          <Sidebar />
+	</div>
+        <div className="column is-10">
+	  <div>
+	  {children}
+	  </div>
+	</div>
+      </div>
       <Footer />
     </div>
   );
