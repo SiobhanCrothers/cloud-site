@@ -51,7 +51,7 @@ const Navbar = () => {
             </li>
             <li className="navbar-item" style={{padding: "0px"}}>
             <Link className="navbar-item" to="/documentation">
-              Docs and Learn
+              Docs & Learning
             </Link>
             </li>
 	  {/*<li className="navbar-item" style={{padding: "0px"}}>
@@ -88,7 +88,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className='header-position-right'>
+      <div className="header-position-right" style={{paddingRight: "40px"}}>
         <SearchForm classNames={'link_bold'}/>
       </div>
     </nav>
