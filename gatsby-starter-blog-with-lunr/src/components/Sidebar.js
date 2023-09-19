@@ -5,7 +5,8 @@ import styled from 'styled-components';
 const SidebarContainer = styled.div`
   background-color: #333;
   color: white;
-  padding: 20px;
+  padding: 40px;
+  height: 100%;
   ul {
     list-style: none;
     padding: 0;
@@ -27,7 +28,7 @@ const Sidebar = () => {
     <SidebarContainer>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/welcome">Home</Link>
         </li>
         <li>
           <Link to="/about">About</Link>

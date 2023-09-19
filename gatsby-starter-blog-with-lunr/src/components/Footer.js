@@ -25,7 +25,7 @@ const Footer = () => {
                 <section className="menu">
                   <ul className="menu-list">
                     <li>
-                      <Link to="/" className="navbar-item">
+                      <Link to="/welcome" className="navbar-item">
                         Home
                       </Link>
                     </li>

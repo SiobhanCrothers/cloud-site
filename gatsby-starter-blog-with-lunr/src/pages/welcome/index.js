@@ -1,28 +1,27 @@
 import * as React from "react";
 
 import Layout from "../../components/Layout";
-import DocRoll from "../../components/DocRoll";
+import WelcomeRoll from "../../components/WelcomeRoll";
 
-export default class DocIndexPage extends React.Component {
+export default class WelcomeIndexPage extends React.Component {
   render() {
     return (
       <Layout>
         <section className="section">
           <div className="container">
             <div className="content">
-	      <h1
+              <h1
                 className="has-text-weight-bold is-size-1"
                 style={{
-                  boxShadow: "0.5rem 0 0 #fff, -0.5rem 0 0 #f65e0a",
-                  backgroundPosition: "center center",
+                  boxShadow: "0 0 0 #fff, -0.5rem 0 0 #f65e0a",
                   backgroundColor: "#fff",
                   color: "#f65e0a",
                   padding: "1rem",
                 }}
               >
-                Documentation and Learning
+                Welcome to Bravura Cloud
               </h1>
-              <DocRoll />
+              <WelcomeRoll />
             </div>
           </div>
         </section>
