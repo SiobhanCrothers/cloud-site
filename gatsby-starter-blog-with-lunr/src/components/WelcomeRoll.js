@@ -12,16 +12,16 @@ const WelcomeRollTemplate = (props) => {
     <div className="columns is-multiline">
       {posts &&
         posts.map(({ node: post }) => (
-          <div className="is-parent column is-4" key={post.id}>
+          <div className="is-parent column is-4" key={post.id} >
 	    <article 
               className={`blog-list-item tile is-child box notification ${
                 post.frontmatter.featuredpost ? 'is-featured' : ''
-              }`}
+              }` }
             >
             <Link to={post.fields.slug}>
 	      <header style={{ justifyContent: "center" }}>
                 {post?.frontmatter?.featuredimage && (
-                  <div className="featured-thumbnail" style={{ justifyContent: "center" }}>
+                  <div className="featured-thumbnail">
                     <TileImage
                       imageInfo={{
                         image: post.frontmatter.featuredimage,
@@ -37,7 +37,7 @@ const WelcomeRollTemplate = (props) => {
                   </div>
                 ) }
 		</header>
-                <p className="post-meta" style={{ justifyContent: "center" }}>
+                <p className="post-meta"  style={{ textAlign: "center" }}>
                   <Link
                     className="title has-text-primary is-size-4"
                     to={post.fields.slug}
@@ -46,7 +46,7 @@ const WelcomeRollTemplate = (props) => {
                   </Link>
                   <span> &bull; </span>
                 </p>
-              <p style={{ justifyContent: "center" }}>
+              <p style={{ textAlign: "center" }}>
                 {post.excerpt}
                 <br />
                 <br />
