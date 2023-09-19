@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const SidebarContainer = styled.div`
-  background-color: #333;
+  background-color: #414141;
   color: white;
   padding: 40px;
   height: 100%;

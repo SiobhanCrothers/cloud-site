@@ -7,7 +7,7 @@ tags:
   - question
 ---
 
-# Bravura Cloud Quick Start
+# Introduction
 
 This guide is intended to be a quickstart that allows you to get going with Bravura Cloud. It will walk you through the steps of
 

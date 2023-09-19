@@ -44,7 +44,6 @@ const WelcomeRollTemplate = (props) => {
                   >
                     {post.frontmatter.title}
                   </Link>
-                  <span> &bull; </span>
                 </p>
               <p style={{ textAlign: "center" }}>
                 {post.excerpt}
