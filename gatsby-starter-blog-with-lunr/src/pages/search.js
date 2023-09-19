@@ -19,6 +19,7 @@ const Search = ({
 	setResults(posts);
         });
       }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location.search]);
     return (
     <Layout location={location} title={data.site.siteMetadata.title}>

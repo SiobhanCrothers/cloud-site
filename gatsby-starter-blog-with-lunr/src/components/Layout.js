@@ -52,7 +52,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar />
       <div className="columns">
-	<div className="column is-3">
+	<div className="column is-2">
           <Sidebar />
 	</div>
         <div className="column is-10">
