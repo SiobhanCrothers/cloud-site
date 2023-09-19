@@ -60,11 +60,11 @@ const Footer = () => {
               <div className="column is-4">
                 <section>
                   <ul className="menu-list">
-                    <li>
+	         {/*<li>
                       <Link className="navbar-item" to="/blog">
                         Latest Stories
                       </Link>
-                    </li>
+                    </li>*/}
                     <li>
                       <Link className="navbar-item" to="/contact">
                         Contact
