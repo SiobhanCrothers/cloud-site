@@ -74,10 +74,10 @@ const Navbar = () => {
               FAQ
             </Link>
             </li>*/}
-          <li className="navbar-end has-text-centered">
+          <li className="navbar-item" style={{padding: "0px"}}>
             <a
               className="navbar-item"
-              href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+              href="https://github.com/SiobhanCrothers/cloud-site/tree/main/gatsby-starter-blog-with-lunr"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -88,7 +88,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="header-position-right" style={{paddingRight: "40px"}}>
+      <div className="header-position-right" style={{paddingRight: "120px"}}>
         <SearchForm classNames={'link_bold'}/>
       </div>
     </nav>
