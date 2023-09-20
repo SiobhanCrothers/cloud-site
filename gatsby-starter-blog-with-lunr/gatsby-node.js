@@ -7,8 +7,8 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-// Define the template for blog post
-const docTile = path.resolve(`./src/templates/doc-tile.js`)
+// Define the template for doc pages
+const DocTile = path.resolve(`./src/templates/doc-tile.js`)
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (result.errors) {
     reporter.panicOnBuild(
-      `There was an error loading your blog posts`,
+      `There was an error loading your doc page`,
       result.errors
     )
     return
@@ -40,8 +40,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allMarkdownRemark.nodes
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
+  // Create doc pages
+  // But only if there's at least one markdown file found at "content/doc" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
 
   if (posts.length > 0) {
@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
       createPage({
         path: post.fields.slug,
-        component: docTile,
+        component: DocTile,
         context: {
           id: post.id,
           previousPostId,
@@ -90,7 +90,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 
   // Also explicitly define the Markdown frontmatter
   // This way the "MarkdownRemark" queries will return `null` even when no
-  // blog posts are stored inside "content/blog" instead of returning an error
+  // doc pages are stored inside "content/doc" instead of returning an error
   createTypes(`
     type SiteSiteMetadata {
       author: Author

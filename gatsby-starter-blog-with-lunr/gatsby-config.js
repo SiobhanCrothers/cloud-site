@@ -9,15 +9,15 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Bravura Cloud`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Siobhan Crothers`,
+      summary: `The Power of One.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Bravura Cloud documentation.`,
+    siteUrl: `https://bejewelled-malasada-929c81.netlify.app/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `bravurasecurity`,
     },
   },
   plugins: [
@@ -155,7 +155,7 @@ module.exports = {
               }
             }`,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "Bravura Cloud RSS Feed",
           },
         ],
       },
@@ -171,15 +171,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `Gatsby`,
+        name: `Bravura Cloud`,
+        short_name: `Bravura`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/img/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/img/bravura-icon.png`, // This path is relative to the root of the site.
       },
     },
   ],
