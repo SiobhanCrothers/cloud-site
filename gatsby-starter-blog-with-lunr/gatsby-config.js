@@ -9,13 +9,13 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Bravura Cloud`,
+    title: `Bravura Cloud Documentation`,
     author: {
       name: `Siobhan Crothers`,
       summary: `The Power of One.`,
     },
     description: `Bravura Cloud documentation.`,
-    siteUrl: `https://bejewelled-malasada-929c81.netlify.app/`,
+    siteUrl: `https://bravuraclouddocs.netlify.app/`,
     social: {
       twitter: `bravurasecurity`,
     },
