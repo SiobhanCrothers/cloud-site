@@ -31,10 +31,13 @@ const Sidebar = () => {
           <Link to="/welcome">Home</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/architecture">Architecture</Link>
         </li>
-        <li>
-          <Link to="/quick-start">Quick Start</Link>
+	<li>
+	  <Link to="/configuration">Configuration</Link>
+	  <li>
+            <Link to="/configuration/quick-start">Quick Start</Link>
+	  </li>
         </li>
         <li>
           <Link to="/documentation">Docs & Learning</Link>

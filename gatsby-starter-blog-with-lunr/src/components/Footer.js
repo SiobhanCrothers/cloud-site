@@ -35,7 +35,7 @@ const Footer = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/quick-start">
+                      <Link className="navbar-item" to="/configuration/quick-start">
                         Quick Start
                       </Link>
                     </li>

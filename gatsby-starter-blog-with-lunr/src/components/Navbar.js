@@ -45,7 +45,7 @@ const Navbar = () => {
             </Link>
 	    </li>*/}
             <li className="navbar-item" style={{padding: "0px"}}>
-            <Link className="navbar-item" to="/quick-start">
+            <Link className="navbar-item" to="/configuration/quick-start">
               Quick Start
             </Link>
             </li>
