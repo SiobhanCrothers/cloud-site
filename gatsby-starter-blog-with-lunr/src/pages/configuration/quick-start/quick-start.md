@@ -1,13 +1,12 @@
 ---
 templateKey: 'quick-start'
 path: /quick-start
-title: Bravura Cloud Quick Start Guide
+title: Introduction
+slug: quick-start
 date: 2023-09-01T21:04:00.682Z
 tags:
   - question
 ---
-
-# Introduction
 
 This guide is intended to be a quickstart that allows you to get going with Bravura Cloud. It will walk you through the steps of
 
