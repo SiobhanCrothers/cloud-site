@@ -20,7 +20,7 @@ export default class DocIndexPage extends React.Component {
                   padding: "1rem",
                 }}
               >
-                Documentation and Learning
+                Documentation
               </h1>
               <DocRoll />
             </div>

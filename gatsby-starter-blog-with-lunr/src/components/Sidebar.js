@@ -39,9 +39,7 @@ const Sidebar = () => {
             <Link to="/configuration/quick-start">Quick Start</Link>
 	  </li>
         </li>
-        <li>
-          <Link to="/documentation">Docs & Learning</Link>
-        </li>
+        <li>Features</li>
         <li>
           <Link to="/contact">Contact</Link>
         </li>

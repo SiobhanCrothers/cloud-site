@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql /*, Link */} from 'gatsby';
 import Layout from '../../components/Layout';
 
 const AboutPage = ({ data }) => {
@@ -10,7 +10,7 @@ const AboutPage = ({ data }) => {
       <section className="section">
         <div className="container">
           <div className="content">
-            <h1>What is Bravura Cloud?</h1>
+            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">What is Bravura Cloud?</h1>
           </div>
           <div className="content">
             {edges.map(({ node }) => (
