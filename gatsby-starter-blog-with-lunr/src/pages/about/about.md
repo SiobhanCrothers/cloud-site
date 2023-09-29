@@ -1,14 +1,13 @@
 ---
-templateKey: 'about-page'
+templateKey: 'about'
 path: /about
-title: What is Bravura Cloud?
-date: 2023-09-01
+title: Summary
+slug: about
+date: 2023-09-01T21:04:00.682Z
 ---
 
-# Summary
-
 Bravura Cloud is a cloud native Identity and Access Management platform built
-# Services
+## Services
 
 Below is a list of the micro services that make up Bravura Cloud.
 
