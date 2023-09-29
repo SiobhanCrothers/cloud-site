@@ -41,6 +41,9 @@ const Sidebar = () => {
         </li>
         <li>Features</li>
         <li>
+          <Link to="/tech-concepts">Technical Concepts</Link>
+        </li>
+        <li>
           <Link to="/contact">Contact</Link>
         </li>
       </ul>

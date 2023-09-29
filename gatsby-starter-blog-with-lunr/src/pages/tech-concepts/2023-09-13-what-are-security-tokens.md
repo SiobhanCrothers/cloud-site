@@ -1,5 +1,5 @@
 ---
-templateKey: doc
+templateKey: tech-concept
 title: What are Security Tokens?
 date: 2023-09-01T21:04:00.682Z
 tags:

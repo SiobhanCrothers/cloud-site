@@ -1,5 +1,5 @@
 ---
-templateKey: faq-question
+templateKey: tech-concept
 title: What is a System?
 date: 2023-09-01T21:04:00.682Z
 tags:
