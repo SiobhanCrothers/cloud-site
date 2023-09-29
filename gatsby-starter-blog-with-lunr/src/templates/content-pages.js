@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 
 // eslint-disable-next-line
-export const DocTileTemplate = ({
+export const ContentPageTemplate = ({
   content,
   contentComponent,
   description,
@@ -20,9 +20,8 @@ export const DocTileTemplate = ({
   return (
     <section className="section">
       {helmet || ""}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
+      <div className="container">
+        <div className="content">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
@@ -40,14 +39,13 @@ export const DocTileTemplate = ({
                 </ul>
               </div>
             ) : null}
-          </div>
         </div>
       </div>
     </section>
   );
 };
 
-DocTileTemplate.propTypes = {
+ContentPageTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
@@ -55,17 +53,17 @@ DocTileTemplate.propTypes = {
   helmet: PropTypes.object,
 };
 
-const DocTile = ({ data }) => {
+const ContentPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
     <Layout>
-      <DocTileTemplate
+      <ContentPageTemplate
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Doc">
+          <Helmet titleTemplate="%s | ContentPage">
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"
@@ -80,16 +78,16 @@ const DocTile = ({ data }) => {
   );
 };
 
-DocTile.propTypes = {
+ContentPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 };
 
-export default DocTile;
+export default ContentPage;
 
 export const pageQuery = graphql`
-  query DocTileByID($id: String!) {
+  query ContentPageByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
@@ -102,3 +100,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+
