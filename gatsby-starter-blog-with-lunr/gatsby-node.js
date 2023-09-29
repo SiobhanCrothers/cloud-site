@@ -8,7 +8,7 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // Define the template for doc pages
-const ContentPage = path.resolve(`./src/templates/content-pages.js`)
+const ContentPage = path.resolve(`./src/components/content-pages.js`)
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}

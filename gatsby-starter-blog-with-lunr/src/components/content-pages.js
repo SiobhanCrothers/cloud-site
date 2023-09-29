@@ -1,17 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
+/*import { kebabCase } from "lodash";*/
 import { Helmet } from "react-helmet";
-import { graphql, Link } from "gatsby";
-import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import { graphql /*, Link */} from "gatsby";
+import Layout from "./Layout";
+import Content, { HTMLContent } from "./Content";
 
 // eslint-disable-next-line
 export const ContentPageTemplate = ({
   content,
   contentComponent,
   description,
-  tags,
   title,
   helmet,
 }) => {
@@ -22,23 +21,11 @@ export const ContentPageTemplate = ({
       {helmet || ""}
       <div className="container">
         <div className="content">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
+          <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+            {title}
+          </h1>
+          <p>{description}</p>
+          <PostContent content={content} />
         </div>
       </div>
     </section>
@@ -71,7 +58,6 @@ const ContentPage = ({ data }) => {
             />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
     </Layout>
@@ -95,7 +81,6 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
       }
     }
   }
