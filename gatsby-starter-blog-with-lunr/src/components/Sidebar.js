@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
@@ -33,7 +33,7 @@ const Dropdown = styled.div`
   li {
     padding: 0;
     margin-top: -10px;
-    font-size: 15px;
+    font-size: 16px;
   }
   a {
     color: white;
@@ -53,6 +53,10 @@ const Sidebar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  useEffect(() => {
+    setIsDropdownOpen(window.location.pathname.startsWith('/configuration'));
+  }, []);
+
   return (
     <SidebarContainer>
       <ul>
@@ -62,17 +66,26 @@ const Sidebar = () => {
         <li>
           <Link to="/architecture">Architecture</Link>
         </li>
-	<li onClick={toggleDropdown}>
-	  <li style={{ display: 'flex', alignItems: 'center', padding: "0px", marginBottom: "0px" }}>
+	<li>
+	  <div 
+	    style={{ display: 'flex', alignItems: 'center', padding: "0px", marginBottom: "0px" }}
+	    onClick={toggleDropdown}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                toggleDropdown();
+              }
+            }}
+            tabIndex={0}
+	    >
 	    <a style={{ display: 'block', paddingRight: '10px' }}>Configuration</a>
-	    <div style={{ transform: isDropdownOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
+ 	    <div style={{ transform: isDropdownOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
 	      &gt;
 	    </div>
-	  </li>
+	  </div>
 	  {isDropdownOpen && (
 	    <Dropdown>
               <ul>
-	        <li style={{marginTop: "0px"}}>
+	        <li style={{marginTop: "0px"}} >
                   <Link to="/configuration/quick-start">Quick Start</Link>
 		</li>
 		<li>
