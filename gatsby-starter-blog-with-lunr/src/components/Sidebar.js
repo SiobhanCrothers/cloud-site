@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
@@ -13,6 +13,7 @@ const SidebarContainer = styled.div`
   }
   li {
     margin-bottom: 10px;
+    font-size: 18px;
   }
   a {
     color: white;
@@ -23,7 +24,35 @@ const SidebarContainer = styled.div`
   }
 `;
 
+const Dropdown = styled.div`
+  ul {
+    list-style: none;
+    padding: 0;
+    padding-left: 10px;
+  }
+  li {
+    padding: 0;
+    margin-top: -10px;
+    font-size: 15px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  a:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+`;
+
 const Sidebar = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <SidebarContainer>
       <ul>
@@ -33,11 +62,31 @@ const Sidebar = () => {
         <li>
           <Link to="/architecture">Architecture</Link>
         </li>
-	<li>
-	  <Link to="/configuration">Configuration</Link>
-	  <li>
-            <Link to="/configuration/quick-start">Quick Start</Link>
+	<li onClick={toggleDropdown}>
+	  <li style={{ display: 'flex', alignItems: 'center', padding: "0px", marginBottom: "0px" }}>
+	    <a style={{ display: 'block', paddingRight: '10px' }}>Configuration</a>
+	    <div style={{ transform: isDropdownOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
+	      &gt;
+	    </div>
 	  </li>
+	  {isDropdownOpen && (
+	    <Dropdown>
+              <ul>
+	        <li style={{marginTop: "0px"}}>
+                  <Link to="/configuration/quick-start">Quick Start</Link>
+		</li>
+		<li>
+                  <Link to="/configuration/integrations">Integrations</Link>
+                </li>
+		<li>
+                  <Link to="/configuration/how-tos">How-tos</Link>
+                </li>
+		<li>
+                  <Link to="/configuration/troubleshooting">Troubleshooting</Link>
+                </li>
+	      </ul>
+            </Dropdown>
+	  )}
         </li>
         <li>Features</li>
         <li>
