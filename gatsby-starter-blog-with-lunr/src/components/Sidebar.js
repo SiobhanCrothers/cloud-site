@@ -8,6 +8,14 @@ const SidebarContainer = styled.div`
   padding: 40px;
   padding-bottom: 0;
   height: 100%;
+
+  button {
+    color: white;
+    text-decoration: none;
+  }
+  button:hover {
+    text-decoration: underline;
+  }
   ul {
     list-style: none;
     padding: 0;
@@ -98,7 +106,7 @@ const Sidebar = () => {
               }
             }}
           >
-            <a style={{ display: 'block', paddingRight: '10px' }}>Configuration</a>
+            <button style={{ display: 'block', paddingRight: '10px', paddingInlineStart: '0', backgroundColor: 'transparent', border: 'none', cursor: 'pointer' }}>Configuration</button>
             <div style={{ transform: isCategoryOpen('configuration') ? 'rotate(90deg)' : 'rotate(0deg)' }}>
               &gt;
             </div>
@@ -134,7 +142,7 @@ const Sidebar = () => {
               }
             }}
           >
-            <a style={{ display: 'block', paddingRight: '10px' }}>Features</a>
+            <button style={{ display: 'block', paddingRight: '10px', paddingInlineStart: '0', backgroundColor: 'transparent', border: 'none', cursor: 'pointer' }}>Features</button>
             <div style={{ transform: isCategoryOpen('features') ? 'rotate(90deg)' : 'rotate(0deg)' }}>
               &gt;
             </div>
