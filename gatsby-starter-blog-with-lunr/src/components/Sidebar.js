@@ -48,15 +48,34 @@ const Dropdown = styled.div`
 `;
 
 const Sidebar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  const [openCategories, setOpenCategories] = useState(new Set());
 
   useEffect(() => {
-    setIsDropdownOpen(window.location.pathname.startsWith('/configuration'));
+    // Retrieve the open categories from localStorage on component mount
+    const storedOpenCategories = JSON.parse(localStorage.getItem('openCategories'));
+    if (storedOpenCategories) {
+      setOpenCategories(new Set(storedOpenCategories));
+    }
   }, []);
+
+  const toggleDropdown = (category) => {
+    const newOpenCategories = new Set(openCategories);
+    if (openCategories.has(category)) {
+      newOpenCategories.delete(category);
+    } else {
+      newOpenCategories.add(category);
+    }
+
+    setOpenCategories(newOpenCategories);
+
+    // Save the open categories to localStorage
+    localStorage.setItem('openCategories', JSON.stringify(Array.from(newOpenCategories)));
+  };
+
+  const isCategoryOpen = (category) => {
+    return openCategories.has(category);
+  };
+
 
   return (
     <SidebarContainer>
@@ -68,27 +87,28 @@ const Sidebar = () => {
           <Link to="/architecture">Architecture</Link>
         </li>
 	<li>
-	  <div 
-	    style={{ display: 'flex', alignItems: 'center', padding: "0px", marginBottom: "0px" }}
-	    onClick={toggleDropdown}
+          <div
+            role="button"
+            tabIndex={0}
+	    style={{ display: 'flex', alignItems: 'center', padding: '0px', marginBottom: '0px' }}
+            onClick={() => toggleDropdown('configuration')}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
-                toggleDropdown();
+                toggleDropdown('configuration');
               }
             }}
-            tabIndex={0}
-	    >
-	    <a style={{ display: 'block', paddingRight: '10px' }}>Configuration</a>
- 	    <div style={{ transform: isDropdownOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
-	      &gt;
-	    </div>
-	  </div>
-	  {isDropdownOpen && (
-	    <Dropdown>
+          >
+            <a style={{ display: 'block', paddingRight: '10px' }}>Configuration</a>
+            <div style={{ transform: isCategoryOpen('configuration') ? 'rotate(90deg)' : 'rotate(0deg)' }}>
+              &gt;
+            </div>
+          </div>
+          {isCategoryOpen('configuration') && (
+            <Dropdown>
               <ul>
-	        <li style={{marginTop: "0px"}} >
+                <li style={{ marginTop: '0px' }}>
                   <Link to="/configuration/quick-start">Quick Start</Link>
-		</li>
+                </li>
 		<li>
                   <Link to="/configuration/integrations">Integrations</Link>
                 </li>
@@ -104,24 +124,25 @@ const Sidebar = () => {
         </li>
         <li>
           <div
-            style={{ display: 'flex', alignItems: 'center', padding: "0px", marginBottom: "0px" }}
-            onClick={toggleDropdown}
+            role="button"
+            tabIndex={0}
+	    style={{ display: 'flex', alignItems: 'center', padding: '0px', marginBottom: '0px' }}
+            onClick={() => toggleDropdown('features')}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
-                toggleDropdown();
+                toggleDropdown('features');
               }
             }}
-            tabIndex={0}
-            >
+          >
             <a style={{ display: 'block', paddingRight: '10px' }}>Features</a>
-            <div style={{ transform: isDropdownOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
+            <div style={{ transform: isCategoryOpen('features') ? 'rotate(90deg)' : 'rotate(0deg)' }}>
               &gt;
             </div>
           </div>
-          {isDropdownOpen && (
+          {isCategoryOpen('features') && (
             <Dropdown>
               <ul>
-                <li style={{marginTop: "0px"}} >
+                <li style={{ marginTop: '0px' }}>
                   <Link to="/features/ai">AI</Link>
                 </li>
                 <li>
