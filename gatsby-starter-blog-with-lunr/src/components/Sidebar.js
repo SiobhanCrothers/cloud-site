@@ -6,6 +6,7 @@ const SidebarContainer = styled.div`
   background-color: #414141;
   color: white;
   padding: 40px;
+  padding-bottom: 0;
   height: 100%;
   ul {
     list-style: none;
@@ -101,13 +102,50 @@ const Sidebar = () => {
             </Dropdown>
 	  )}
         </li>
-        <li>Features</li>
+        <li>
+          <div
+            style={{ display: 'flex', alignItems: 'center', padding: "0px", marginBottom: "0px" }}
+            onClick={toggleDropdown}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                toggleDropdown();
+              }
+            }}
+            tabIndex={0}
+            >
+            <a style={{ display: 'block', paddingRight: '10px' }}>Features</a>
+            <div style={{ transform: isDropdownOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
+              &gt;
+            </div>
+          </div>
+          {isDropdownOpen && (
+            <Dropdown>
+              <ul>
+                <li style={{marginTop: "0px"}} >
+                  <Link to="/features/ai">AI</Link>
+                </li>
+                <li>
+                  <Link to="/features/use-cases">Use Cases</Link>
+                </li>
+                <li>
+                  <Link to="/features/references">References</Link>
+                </li>
+                <li>
+                  <Link to="/features/troubleshooting">Troubleshooting</Link>
+                </li>
+                <li>
+                  <Link to="/features/ea-limitations">EA Limitations</Link>
+                </li>
+              </ul>
+            </Dropdown>
+          )}
+        </li>
         <li>
           <Link to="/tech-concepts">Technical Concepts</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
-        </li>
+          <Link to="/faq">FAQ</Link>
+        </li>	
       </ul>
     </SidebarContainer>
   );

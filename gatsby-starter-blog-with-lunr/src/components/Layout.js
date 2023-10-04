@@ -51,8 +51,8 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div className="columns">
-	<div className="column is-2">
+      <div className="columns" style={{marginBottom: "0px"}}>
+	<div className="column is-2" style={{padding: "0px"}}>
           <Sidebar />
 	</div>
         <div className="column is-10">
