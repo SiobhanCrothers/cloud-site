@@ -11,6 +11,11 @@ const NavbarItems = styled.ul`
   li {
     margin-bottom: 0;
   }
+
+  a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active {
+    color: #f65e0a;
+  }
+
 `;
 
 const TopDropdownMenu = styled.ul`
@@ -44,7 +49,7 @@ const TopDropdownWrapper = styled.div`
   }
 
   button:hover {
-    color: hsl(229, 53%, 53%);
+    color: #f65e0a;
   }
 
   li {
@@ -58,7 +63,7 @@ const TopDropdownWrapper = styled.div`
   }
 
   a:hover {
-    color: hsl(229, 53%, 53%); 
+    color: #f65e0a; 
   }
 
   .chevron {
@@ -100,7 +105,7 @@ const SubDropdownWrapper = styled.div`
   }
 
   &:hover button {
-    color: hsl(229, 53%, 53%);
+    color: #f65e0a;
   }
 
   li {
@@ -114,7 +119,7 @@ const SubDropdownWrapper = styled.div`
   }
 
   a:hover {
-    color: hsl(229, 53%, 53%);
+    color: #f65e0a;
   }
 
   .chevron {
