@@ -7,11 +7,19 @@ import styled from 'styled-components';
 
 /* Style for the dropdown menu */
 
+const NavbarItems = styled.ul`
+  li {
+    margin-bottom: 0;
+  }
+`;
+
 const TopDropdownMenu = styled.ul`
   display: none;
   position: absolute;
   background-color: #fff; /* Background color for the dropdown */
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);}
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+  padding: 5px 0 5px 0;
 `;
 
 const TopDropdownWrapper = styled.div`
@@ -21,19 +29,37 @@ const TopDropdownWrapper = styled.div`
     display: block;
   }
 
+  li.navbar-item {
+    margin-bottom: 0;
+  }
+
   button {
     cursor: pointer;
     background: none;
     border: none;
     font: inherit;
-    color: inherit;
     display: flex;
     align-items: center;
+    color: hsl(0, 0%, 29%);
   }
 
 
   &:hover button {
     color: hsl(229, 53%, 53%);
+  }
+
+  li {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: hsl(0, 0%, 29%);
+    text-decoration: none;
+    padding: 2px 20px 2px 20px;
+  }
+
+  a:hover {
+    color: hsl(229, 53%, 53%); 
   }
 
   .chevron {
@@ -68,7 +94,7 @@ const Navbar = () => {
             <span />
           </button>
         </div>
-        <ul id="navMenu" className={` navbar-start has-text-centered navbar-menu ${isActive && "is-active"}`}>
+        <NavbarItems id="navMenu" className={` navbar-start has-text-centered navbar-menu ${isActive && "is-active"}`}>
             <li className="navbar-item" style={{padding: "0px"}}>
               <Link className="navbar-item" to="/about">
                 About
@@ -123,8 +149,8 @@ const Navbar = () => {
                 <img src={github} alt="Github" />
               </span>
             </a>
-          </li>
-        </ul>
+	  </li>
+        </NavbarItems>
       </div>
       <div className="header-position-right" style={{paddingRight: "120px"}}>
         <SearchForm classNames={'link_bold'}/>

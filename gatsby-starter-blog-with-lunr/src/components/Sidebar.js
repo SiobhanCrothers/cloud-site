@@ -14,6 +14,7 @@ const SidebarContainer = styled.div`
     text-decoration: none;
   }
   button:hover {
+    color: white;
     text-decoration: underline;
   }
   ul {
@@ -29,6 +30,7 @@ const SidebarContainer = styled.div`
     text-decoration: none;
   }
   a:hover {
+    color: white;
     text-decoration: underline;
   }
 `;
@@ -50,6 +52,7 @@ const Dropdown = styled.div`
     opacity: 0.8;
   }
   a:hover {
+    color: white;
     text-decoration: underline;
     opacity: 1;
   }
