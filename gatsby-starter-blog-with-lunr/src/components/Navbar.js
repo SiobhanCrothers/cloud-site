@@ -18,7 +18,7 @@ const TopDropdownMenu = styled.ul`
   position: absolute;
   background-color: #fff; /* Background color for the dropdown */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  min-width: 200px;
+  min-width: max-content;
   padding: 5px 0 5px 0;
 `;
 
@@ -43,6 +43,61 @@ const TopDropdownWrapper = styled.div`
     color: hsl(0, 0%, 29%);
   }
 
+  button:hover {
+    color: hsl(229, 53%, 53%);
+  }
+
+  li {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: hsl(0, 0%, 29%);
+    text-decoration: none;
+    padding: 2px 20px 2px 20px;
+  }
+
+  a:hover {
+    color: hsl(229, 53%, 53%); 
+  }
+
+  .chevron {
+    margin-left: 0.5rem;
+    transform: rotate(90deg);
+  }
+`;
+
+const SubDropdownMenu = styled.ul`
+  display: none;
+  position: absolute;
+  left: 170px; /* Position to the right of the parent */
+  top: 0; /* Align with the top of the parent */
+  background-color: #fff; /* Background color for the dropdown */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  min-width: max-content;
+  padding: 5px 0 5px 0;
+`;
+
+const SubDropdownWrapper = styled.div`
+  position: relative;
+
+  &:hover ${SubDropdownMenu} {
+    display: block;
+  }
+
+  li.navbar-item {
+    margin-bottom: 0;
+  }
+
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit;
+    display: flex;
+    align-items: center;
+    color: hsl(0, 0%, 29%);
+  }
 
   &:hover button {
     color: hsl(229, 53%, 53%);
@@ -59,7 +114,7 @@ const TopDropdownWrapper = styled.div`
   }
 
   a:hover {
-    color: hsl(229, 53%, 53%); 
+    color: hsl(229, 53%, 53%);
   }
 
   .chevron {
@@ -105,7 +160,7 @@ const Navbar = () => {
               Quick Start
             </Link>
             </li>
-            <li className="navbar-item" style={{padding: "0px"}}>
+	    <li className="navbar-item" style={{padding: "0px"}}>
 	      <TopDropdownWrapper>
 	        <button>
 	          Documentation 
@@ -115,12 +170,51 @@ const Navbar = () => {
 	  	  <li className="navbar-item" style={{padding: "0px"}}>
                     <Link to="/architecture">Architecture</Link>
 	  	  </li>
- 	       {/*<li className="navbar-item" style={{padding: "0px"}}>
-                    <Link to="/configuration">Configuration</Link>
+		  <li className="navbar-item" style={{padding: "0px"}}>
+	            <SubDropdownWrapper>
+	              <button style={{ padding: '2px 40px 2px 20px' }}>
+                        Configuration &gt;
+                      </button>
+	              <SubDropdownMenu>
+	                <li className="navbar-item" style={{padding: "0px"}}>
+                          <Link to="/configuration/quick-start">Quick Start</Link>
+                        </li>
+	  		<li className="navbar-item" style={{padding: "0px"}}>
+                          <Link to="/configuration/integrations">Integrations</Link>
+                        </li>
+			<li className="navbar-item" style={{padding: "0px"}}>
+                          <Link to="/configuration/how-tos">How Tos</Link>
+                        </li>
+			<li className="navbar-item" style={{padding: "0px"}}>
+                          <Link to="/configuration/troubleshooting">Troubleshooting</Link>
+                        </li>
+	              </SubDropdownMenu>
+	            </SubDropdownWrapper>
+	  	  </li>
+                  <li className="navbar-item" style={{padding: "0px"}}>
+                    <SubDropdownWrapper>
+	  	      <button style={{ padding: '2px 80px 2px 20px' }}>
+                        Features &gt;
+                      </button>
+                      <SubDropdownMenu>
+                        <li className="navbar-item" style={{padding: "0px"}}>
+                          <Link to="/features/ai">AI</Link>
+                        </li>
+                        <li className="navbar-item" style={{padding: "0px"}}>
+                          <Link to="/features/ea-limitations">EA Limitations</Link>
+                        </li>
+                        <li className="navbar-item" style={{padding: "0px"}}>
+                          <Link to="/features/references">References</Link>
+                        </li>
+                        <li className="navbar-item" style={{padding: "0px"}}>
+                          <Link to="/features/troubleshooting">Troubleshooting</Link>
+                        </li>
+                        <li className="navbar-item" style={{padding: "0px"}}>
+                          <Link to="/features/use-cases">Use Cases</Link>
+                        </li>
+                      </SubDropdownMenu>
+                    </SubDropdownWrapper>
                   </li>
-	  	  <li className="navbar-item" style={{padding: "0px"}}>
-                    <Link to="/features">Features</Link>
-                  </li>*/}
                   <li className="navbar-item" style={{padding: "0px"}}>
                     <Link to="/features/troubleshooting">Troubleshooting</Link>
 	          </li>
