@@ -221,9 +221,6 @@ const Navbar = () => {
                     </SubDropdownWrapper>
                   </li>
                   <li className="navbar-item" style={{padding: "0px"}}>
-                    <Link to="/features/troubleshooting">Troubleshooting</Link>
-	          </li>
-                  <li className="navbar-item" style={{padding: "0px"}}>
 	            <Link to="/tech-concepts">Technical Concepts</Link>
 	          </li>
 	   	  <li className="navbar-item" style={{padding: "0px"}}>
