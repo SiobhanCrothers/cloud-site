@@ -7,6 +7,7 @@ import "../style/custom-style.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 import Sidebar from './Sidebar';
+import RightSidebar from './rightSidebar';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -55,10 +56,13 @@ const TemplateWrapper = ({ children }) => {
 	<div className="column is-2" style={{padding: "0px"}}>
           <Sidebar />
 	</div>
-        <div className="column is-10">
+        <div className="column is-8">
 	  <div>
 	  {children}
 	  </div>
+	</div>
+	<div className="column is-2">
+          <RightSidebar />
 	</div>
       </div>
       <Footer />
